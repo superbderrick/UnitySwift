@@ -5,6 +5,7 @@ Unity as a library example project
 The example code code was created eferring to the sample code below, and plese see the details and restriction 
 
 https://github.com/Unity-Technologies/uaal-example
+https://github.com/Unity-Technologies/uaal-ar-example
 
 
 # What is the UAAL(Unity as a library)? 
