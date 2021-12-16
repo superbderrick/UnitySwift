@@ -11,7 +11,7 @@ class UnityUISampleView: UIView {
     
     private var delegate: AppDelegate?
     
-    let nativeTitleLable:  UILabel = {
+    public let nativeTitleLable:  UILabel = {
         
         let label = UILabel()
         label.frame = CGRect(x: 400, y: 20, width: 250, height: 30)

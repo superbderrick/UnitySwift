@@ -20,9 +20,6 @@ public class Cube : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, Time.deltaTime*10, 0);
-		
-		if (Application.platform == RuntimePlatform.Android)
-            if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
     }
 
     string lastStringColor = "";
@@ -41,10 +38,10 @@ public class Cube : MonoBehaviour
 
     void showHostMainWindow()
     {
-
-    #if UNITY_IOS || UNITY_TVOS
+        Debug.Log("showHostMainWindow");
+    
             NativeAPI.showHostMainWindow(lastStringColor);
-    #endif
+    
     }
 
     void OnGUI()
@@ -53,7 +50,7 @@ public class Cube : MonoBehaviour
         style.fontSize = 30;        
         if (GUI.Button(new Rect(10, 10, 200, 100), "Red", style)) ChangeColor("red");
         if (GUI.Button(new Rect(10, 110, 200, 100), "Blue", style)) ChangeColor("blue");
-        if (GUI.Button(new Rect(10, 300, 400, 100), "Show Main With Color", style)) showHostMainWindow();
+        if (GUI.Button(new Rect(10, 300, 400, 100), "Change Native title color color", style)) showHostMainWindow();
 
         if (GUI.Button(new Rect(10, 400, 400, 100), "Unload", style)) Application.Unload();
         if (GUI.Button(new Rect(440, 400, 400, 100), "Quit", style)) Application.Quit();

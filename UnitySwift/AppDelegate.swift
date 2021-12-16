@@ -11,6 +11,16 @@ import UnityFramework
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , NativeCallsProtocol   {
     func showHostMainWindow(_ color: String!) {
+        if(color == "blue") {
+            
+            self.unitySampleView.nativeTitleLable.backgroundColor = .blue
+           } else if(color == "red") {
+               self.unitySampleView.nativeTitleLable.backgroundColor = .red
+           }else if(color == "yellow") {
+               self.unitySampleView.nativeTitleLable.backgroundColor = .yellow
+           }
+           
+           window?.makeKeyAndVisible()
         
     }
     
@@ -97,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     }
     
     func showHostMainWindow() {
-        window?.makeKeyAndVisible()
+        self.showHostMainWindow("")
     }
     
     
