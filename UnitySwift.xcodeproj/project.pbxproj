@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		495B9FC7272D650700370A17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9FC6272D650700370A17 /* AppDelegate.swift */; };
-		495B9FC9272D650700370A17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9FC8272D650700370A17 /* SceneDelegate.swift */; };
 		495B9FCB272D650700370A17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9FCA272D650700370A17 /* ViewController.swift */; };
 		495B9FCE272D650700370A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495B9FCC272D650700370A17 /* Main.storyboard */; };
 		495B9FD0272D650800370A17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495B9FCF272D650800370A17 /* Assets.xcassets */; };
@@ -16,6 +15,12 @@
 		495B9FDE272D650800370A17 /* UnitySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9FDD272D650800370A17 /* UnitySwiftTests.swift */; };
 		495B9FE8272D650800370A17 /* UnitySwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9FE7272D650800370A17 /* UnitySwiftUITests.swift */; };
 		495B9FEA272D650800370A17 /* UnitySwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B9FE9272D650800370A17 /* UnitySwiftUITestsLaunchTests.swift */; };
+		49C04C4A276B02CE00B5E378 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49C04C48276B02CE00B5E378 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49C04C4E276B040900B5E378 /* UnitySampleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04C4D276B040900B5E378 /* UnitySampleUtils.swift */; };
+		49C04C50276B043300B5E378 /* UnitySampleConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04C4F276B043300B5E378 /* UnitySampleConstant.swift */; };
+		49C04C52276B045E00B5E378 /* UnityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04C51276B045E00B5E378 /* UnityHelper.swift */; };
+		49C04C54276B048A00B5E378 /* UnityUISampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04C53276B048A00B5E378 /* UnityUISampleView.swift */; };
+		49C04C57276B075B00B5E378 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C04C56276B075B00B5E378 /* test.m */; };
 		AD2BC83634D448765B85314B /* Pods_UnitySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE1B55B7F7BA513A3C50B0D /* Pods_UnitySwift.framework */; };
 		DFB34C2DEB1D00EB12B049CF /* Pods_UnitySwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE6CE31DC18AA7F84798BB5 /* Pods_UnitySwiftTests.framework */; };
 		FC8E003D2B5F7D3FB92A4BDA /* Pods_UnitySwift_UnitySwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57FA4BAD7BBE81A76CCD4D3F /* Pods_UnitySwift_UnitySwiftUITests.framework */; };
@@ -38,13 +43,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		49C04C4B276B02CE00B5E378 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				49C04C4A276B02CE00B5E378 /* UnityFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		040A949A8440A8B72962EAE6 /* Pods-UnitySwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitySwiftTests.release.xcconfig"; path = "Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		158A2123FABF568AC6CF4E0A /* Pods-UnitySwift-UnitySwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitySwift-UnitySwiftUITests.release.xcconfig"; path = "Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
 		280CE573361F7A9932E988CE /* Pods-UnitySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitySwift.debug.xcconfig"; path = "Target Support Files/Pods-UnitySwift/Pods-UnitySwift.debug.xcconfig"; sourceTree = "<group>"; };
 		495B9FC3272D650700370A17 /* UnitySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495B9FC6272D650700370A17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		495B9FC8272D650700370A17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		495B9FCA272D650700370A17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		495B9FCD272D650700370A17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		495B9FCF272D650800370A17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +73,15 @@
 		495B9FE3272D650800370A17 /* UnitySwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitySwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		495B9FE7272D650800370A17 /* UnitySwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitySwiftUITests.swift; sourceTree = "<group>"; };
 		495B9FE9272D650800370A17 /* UnitySwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitySwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		49C04C3F276AFBD900B5E378 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C04C44276AFCEC00B5E378 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C04C48276B02CE00B5E378 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C04C4D276B040900B5E378 /* UnitySampleUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitySampleUtils.swift; sourceTree = "<group>"; };
+		49C04C4F276B043300B5E378 /* UnitySampleConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitySampleConstant.swift; sourceTree = "<group>"; };
+		49C04C51276B045E00B5E378 /* UnityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityHelper.swift; sourceTree = "<group>"; };
+		49C04C53276B048A00B5E378 /* UnityUISampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityUISampleView.swift; sourceTree = "<group>"; };
+		49C04C55276B075B00B5E378 /* UnitySwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitySwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		49C04C56276B075B00B5E378 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		57FA4BAD7BBE81A76CCD4D3F /* Pods_UnitySwift_UnitySwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitySwift_UnitySwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96092328D07D041C0CF3A7CF /* Pods-UnitySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitySwift.release.xcconfig"; path = "Target Support Files/Pods-UnitySwift/Pods-UnitySwift.release.xcconfig"; sourceTree = "<group>"; };
 		9BE6CE31DC18AA7F84798BB5 /* Pods_UnitySwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitySwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,12 +144,17 @@
 			isa = PBXGroup;
 			children = (
 				495B9FC6272D650700370A17 /* AppDelegate.swift */,
-				495B9FC8272D650700370A17 /* SceneDelegate.swift */,
 				495B9FCA272D650700370A17 /* ViewController.swift */,
 				495B9FCC272D650700370A17 /* Main.storyboard */,
 				495B9FCF272D650800370A17 /* Assets.xcassets */,
 				495B9FD1272D650800370A17 /* LaunchScreen.storyboard */,
 				495B9FD4272D650800370A17 /* Info.plist */,
+				49C04C4D276B040900B5E378 /* UnitySampleUtils.swift */,
+				49C04C4F276B043300B5E378 /* UnitySampleConstant.swift */,
+				49C04C51276B045E00B5E378 /* UnityHelper.swift */,
+				49C04C53276B048A00B5E378 /* UnityUISampleView.swift */,
+				49C04C56276B075B00B5E378 /* test.m */,
+				49C04C55276B075B00B5E378 /* UnitySwift-Bridging-Header.h */,
 			);
 			path = UnitySwift;
 			sourceTree = "<group>";
@@ -154,13 +186,15 @@
 				EE1117BA8A0C08780D89D59D /* Pods-UnitySwiftTests.debug.xcconfig */,
 				040A949A8440A8B72962EAE6 /* Pods-UnitySwiftTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		FD770EEBD619EBC961C8DA6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49C04C48276B02CE00B5E378 /* UnityFramework.framework */,
+				49C04C44276AFCEC00B5E378 /* UnityFramework.framework */,
+				49C04C3F276AFBD900B5E378 /* UnityFramework.framework */,
 				DAE1B55B7F7BA513A3C50B0D /* Pods_UnitySwift.framework */,
 				57FA4BAD7BBE81A76CCD4D3F /* Pods_UnitySwift_UnitySwiftUITests.framework */,
 				9BE6CE31DC18AA7F84798BB5 /* Pods_UnitySwiftTests.framework */,
@@ -180,6 +214,7 @@
 				495B9FC0272D650700370A17 /* Frameworks */,
 				495B9FC1272D650700370A17 /* Resources */,
 				46A5827F837F5728A8B4CD18 /* [CP] Embed Pods Frameworks */,
+				49C04C4B276B02CE00B5E378 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +276,7 @@
 				TargetAttributes = {
 					495B9FC2272D650700370A17 = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 					495B9FD8272D650800370A17 = {
 						CreatedOnToolsVersion = 13.0;
@@ -408,8 +444,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				495B9FCB272D650700370A17 /* ViewController.swift in Sources */,
+				49C04C57276B075B00B5E378 /* test.m in Sources */,
+				49C04C50276B043300B5E378 /* UnitySampleConstant.swift in Sources */,
+				49C04C4E276B040900B5E378 /* UnitySampleUtils.swift in Sources */,
 				495B9FC7272D650700370A17 /* AppDelegate.swift in Sources */,
-				495B9FC9272D650700370A17 /* SceneDelegate.swift in Sources */,
+				49C04C52276B045E00B5E378 /* UnityHelper.swift in Sources */,
+				49C04C54276B048A00B5E378 /* UnityUISampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +627,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C96Z3VF4U6;
@@ -595,6 +636,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -605,6 +647,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jinyoung.dev.UnitySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UnitySwift/UnitySwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -616,6 +660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C96Z3VF4U6;
@@ -624,6 +669,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -634,6 +680,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jinyoung.dev.UnitySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UnitySwift/UnitySwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
