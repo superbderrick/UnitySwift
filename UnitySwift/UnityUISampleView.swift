@@ -14,16 +14,22 @@ class UnityUISampleView: UIView {
     let nativeTitleLable:  UILabel = {
         
         let label = UILabel()
-        label.frame = CGRect(x: 300, y: 0, width: 300, height: 60)
+        label.frame = CGRect(x: 400, y: 20, width: 250, height: 30)
         label.text = "Native UI Components"
+        label.textAlignment = NSTextAlignment.center
+        label.backgroundColor = UIColor.blue
+        label.textColor = UIColor.white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        
         return label
     }()
     
     let unloadButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRect(x: 300, y: 50, width: 100, height: 60)
-        button.setTitleColor(.red, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.frame = CGRect(x: 400, y: 60, width: 100, height: 30)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor.systemPink
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitle("Unload", for: .normal)
         button.addTarget(self, action: #selector(unloadButtonTouched), for: .primaryActionTriggered)
         return button
@@ -31,10 +37,11 @@ class UnityUISampleView: UIView {
     
     let quitButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRect(x: 400, y: 50, width: 100, height: 60)
-        button.setTitleColor(.red, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.frame = CGRect(x: 510, y: 60, width: 100, height: 30)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitle("Quit", for: .normal)
+        button.backgroundColor = UIColor.systemBlue
         button.addTarget(self, action: #selector(quitButtonTouched), for: .primaryActionTriggered)
         return button
     }()
