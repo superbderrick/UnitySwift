@@ -241,3 +241,84 @@ InitTestScene*.unity
 
 
 
+Pods/Manifest.lock
+Pods/Alamofire/LICENSE
+Pods/Alamofire/README.md
+Pods/Alamofire/Source/AFError.swift
+Pods/Alamofire/Source/Alamofire.swift
+Pods/Alamofire/Source/AlamofireExtended.swift
+Pods/Alamofire/Source/AuthenticationInterceptor.swift
+Pods/Alamofire/Source/CachedResponseHandler.swift
+Pods/Alamofire/Source/Combine.swift
+Pods/Alamofire/Source/Concurrency.swift
+Pods/Alamofire/Source/DispatchQueue+Alamofire.swift
+Pods/Alamofire/Source/EventMonitor.swift
+Pods/Alamofire/Source/HTTPHeaders.swift
+Pods/Alamofire/Source/HTTPMethod.swift
+Pods/Alamofire/Source/MultipartFormData.swift
+Pods/Alamofire/Source/MultipartUpload.swift
+Pods/Alamofire/Source/NetworkReachabilityManager.swift
+Pods/Alamofire/Source/Notifications.swift
+Pods/Alamofire/Source/OperationQueue+Alamofire.swift
+Pods/Alamofire/Source/ParameterEncoder.swift
+Pods/Alamofire/Source/ParameterEncoding.swift
+Pods/Alamofire/Source/Protected.swift
+Pods/Alamofire/Source/RedirectHandler.swift
+Pods/Alamofire/Source/Request.swift
+Pods/Alamofire/Source/RequestInterceptor.swift
+Pods/Alamofire/Source/RequestTaskMap.swift
+Pods/Alamofire/Source/Response.swift
+Pods/Alamofire/Source/ResponseSerialization.swift
+Pods/Alamofire/Source/Result+Alamofire.swift
+Pods/Alamofire/Source/RetryPolicy.swift
+Pods/Alamofire/Source/ServerTrustEvaluation.swift
+Pods/Alamofire/Source/Session.swift
+Pods/Alamofire/Source/SessionDelegate.swift
+Pods/Alamofire/Source/StringEncoding+Alamofire.swift
+Pods/Alamofire/Source/URLConvertible+URLRequestConvertible.swift
+Pods/Alamofire/Source/URLEncodedFormEncoder.swift
+Pods/Alamofire/Source/URLRequest+Alamofire.swift
+Pods/Alamofire/Source/URLSessionConfiguration+Alamofire.swift
+Pods/Alamofire/Source/Validation.swift
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Target Support Files/Alamofire/Alamofire-dummy.m
+Pods/Target Support Files/Alamofire/Alamofire-Info.plist
+Pods/Target Support Files/Alamofire/Alamofire-prefix.pch
+Pods/Target Support Files/Alamofire/Alamofire-umbrella.h
+Pods/Target Support Files/Alamofire/Alamofire.debug.xcconfig
+Pods/Target Support Files/Alamofire/Alamofire.modulemap
+Pods/Target Support Files/Alamofire/Alamofire.release.xcconfig
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-acknowledgements.markdown
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-acknowledgements.plist
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-dummy.m
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-frameworks-Debug-input-files.xcfilelist
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-frameworks-Debug-output-files.xcfilelist
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-frameworks-Release-input-files.xcfilelist
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-frameworks-Release-output-files.xcfilelist
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-frameworks.sh
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-Info.plist
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift-umbrella.h
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift.debug.xcconfig
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift.modulemap
+Pods/Target Support Files/Pods-UnitySwift/Pods-UnitySwift.release.xcconfig
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-acknowledgements.markdown
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-acknowledgements.plist
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-dummy.m
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-frameworks-Debug-input-files.xcfilelist
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-frameworks-Debug-output-files.xcfilelist
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-frameworks-Release-input-files.xcfilelist
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-frameworks-Release-output-files.xcfilelist
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-frameworks.sh
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-Info.plist
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests-umbrella.h
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests.debug.xcconfig
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests.modulemap
+Pods/Target Support Files/Pods-UnitySwift-UnitySwiftUITests/Pods-UnitySwift-UnitySwiftUITests.release.xcconfig
+Pods/Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests-acknowledgements.markdown
+Pods/Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests-acknowledgements.plist
+Pods/Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests-dummy.m
+Pods/Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests-Info.plist
+Pods/Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests-umbrella.h
+Pods/Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests.debug.xcconfig
+Pods/Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests.modulemap
+Pods/Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests.release.xcconfig
