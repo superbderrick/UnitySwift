@@ -20,14 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
                self.unitySampleView.nativeTitleLable.backgroundColor = .yellow
            }
            
-           window?.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
         
     }
     
     var window: UIWindow?
     var application: UIApplication?
     var storyboard: UIStoryboard?
-    var hostViewController: ViewController!
+    var viewController: ViewController!
     
     var appLaunchOpts: [UIApplication.LaunchOptionsKey: Any]?
     var unitySampleView: UnityUISampleView!
@@ -44,15 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
         appLaunchOpts = launchOptions
         
         storyboard = UIStoryboard(name: "Main", bundle: .main)
-        hostViewController = storyboard?.instantiateViewController(withIdentifier: "Host") as! ViewController
+        viewController = storyboard?.instantiateViewController(withIdentifier: "Host") as! ViewController
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = hostViewController;
+        self.window?.rootViewController = viewController;
         window?.makeKeyAndVisible()
         
         return true
     }
-    
-    // MARK: UISceneSession Lifecycle
     
     func applicationWillResignActive(_ application: UIApplication) {
         self.ufw?.appController()?.applicationWillResignActive(application)
@@ -164,7 +162,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     private func unloadUnityInternal() {
         self.ufw?.unregisterFrameworkListener(self)
         self.ufw = nil
-        self.showHostMainWindow()
+        window?.makeKeyAndVisible()
     }
     
     private func unloadUnity() {

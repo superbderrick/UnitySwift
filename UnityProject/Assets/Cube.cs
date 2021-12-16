@@ -14,25 +14,31 @@ public class NativeAPI {
 
 public class Cube : MonoBehaviour
 {
-    public Text text;    
-    void appendToText(string line) { text.text += line + "\n"; }
-
+    public Text text;
     void Update()
     {
         transform.Rotate(0, Time.deltaTime*10, 0);
     }
+    
+    
 
     string lastStringColor = "";
-    void ChangeColor(string newColor)
+    public void ChangeColor()
     {
-        appendToText( "Chancing Color to " + newColor );
-
-        lastStringColor = newColor;
-    
-        if (newColor == "red") GetComponent<Renderer>().material.color = Color.red;
-        else if (newColor == "blue") GetComponent<Renderer>().material.color = Color.blue;
-        else if (newColor == "yellow") GetComponent<Renderer>().material.color = Color.yellow;
-        else GetComponent<Renderer>().material.color = Color.black;
+        if (GetComponent<Renderer>().material.color.Equals(Color.white))
+        {
+            GetComponent<Renderer>().material.color = Color.red;
+            text.text = "BLUE";
+        } else if (GetComponent<Renderer>().material.color.Equals(Color.red))
+        {
+            GetComponent<Renderer>().material.color = Color.blue;
+            text.text = "WHITE";
+        } else if (GetComponent<Renderer>().material.color.Equals(Color.blue))
+        {
+            GetComponent<Renderer>().material.color = Color.white;
+            text.text = "RED";
+        }  
+        
     }
 
 
@@ -44,16 +50,15 @@ public class Cube : MonoBehaviour
     
     }
 
-    void OnGUI()
-    {
-        GUIStyle style = new GUIStyle("button");
-        style.fontSize = 30;        
-        if (GUI.Button(new Rect(10, 10, 200, 100), "Red", style)) ChangeColor("red");
-        if (GUI.Button(new Rect(10, 110, 200, 100), "Blue", style)) ChangeColor("blue");
-        if (GUI.Button(new Rect(10, 300, 400, 100), "Change Native title color color", style)) showHostMainWindow();
-
-        if (GUI.Button(new Rect(10, 400, 400, 100), "Unload", style)) Application.Unload();
-        if (GUI.Button(new Rect(440, 400, 400, 100), "Quit", style)) Application.Quit();
-    }
+    // void OnGUI()
+    // {
+    //     GUIStyle style = new GUIStyle("button");
+    //     style.fontSize = 30;        
+    //     if (GUI.Button(new Rect(400, 50, 200, 100), "Red", style)) ChangeColor("red");
+    //     if (GUI.Button(new Rect(100, 50, 200, 100), "Blue", style)) ChangeColor("blue");
+    //     
+    //     if (GUI.Button(new Rect(10, 200, 400, 100), "Unload", style)) Application.Unload();
+    //     if (GUI.Button(new Rect(440, 200, 400, 100), "Quit", style)) Application.Quit();
+    // }
 }
 
