@@ -11,16 +11,18 @@ import UnityFramework
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , NativeCallsProtocol   {
     func showHostMainWindow(_ color: String!) {
-        if(color == "blue") {
-            
+        if(color == "BLUE") {
+            self.unitySampleView.nativeTitleLable.backgroundColor = .red
+            self.unitySampleView.nativeTitleLable.textColor = .white
+        } else if(color == "RED") {
+            self.unitySampleView.nativeTitleLable.backgroundColor = .white
+            self.unitySampleView.nativeTitleLable.textColor = .black
+        }else if(color == "WHITE") {
             self.unitySampleView.nativeTitleLable.backgroundColor = .blue
-           } else if(color == "red") {
-               self.unitySampleView.nativeTitleLable.backgroundColor = .red
-           }else if(color == "yellow") {
-               self.unitySampleView.nativeTitleLable.backgroundColor = .yellow
-           }
-           
-        window?.makeKeyAndVisible()
+            self.unitySampleView.nativeTitleLable.textColor = .white
+        }
+        
+        
         
     }
     
@@ -104,11 +106,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
         }
     }
     
-    func showHostMainWindow() {
-        self.showHostMainWindow("")
-    }
-    
-    
     func initUnity() {
         if unityIsInitialized() {
             UnitySampleUtils.showAlert(UnitySampleConstant.ERRORMESSAGES.ALREADY_INIT, UnitySampleConstant.ERRORMESSAGES.UNLOAD_FIREST, window: self.window)
@@ -133,7 +130,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     
     func attachUnityView() {
         let view: UIView? = ufw?.appController()?.rootView
-        self.unitySampleView = UnityUISampleView(frame: CGRect(x: 0, y: 0, width: 450, height: 450))
+        //        let blackEmptyView = UIView(frame: UIApplication.shared.keyWindow!.frame)
+        
+        self.unitySampleView = UnityUISampleView(frame: UIApplication.shared.keyWindow!.frame)
         view?.addSubview(self.unitySampleView)
     }
     

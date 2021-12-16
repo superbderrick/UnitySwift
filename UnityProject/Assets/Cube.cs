@@ -14,51 +14,38 @@ public class NativeAPI {
 
 public class Cube : MonoBehaviour
 {
-    public Text text;
+    public Text buttonTitle;
     void Update()
     {
-        transform.Rotate(0, Time.deltaTime*10, 0);
+        transform.Rotate(0, Time.deltaTime*20, 0);
     }
     
-    
-
-    string lastStringColor = "";
     public void ChangeColor()
     {
+        Color color = Color.white;
+        string titleTxt = "";
+        
         if (GetComponent<Renderer>().material.color.Equals(Color.white))
         {
-            GetComponent<Renderer>().material.color = Color.red;
-            text.text = "BLUE";
+            color = Color.red;
+            titleTxt = "BLUE";
         } else if (GetComponent<Renderer>().material.color.Equals(Color.red))
         {
-            GetComponent<Renderer>().material.color = Color.blue;
-            text.text = "WHITE";
+            color = Color.blue;
+            titleTxt = "WHITE";
         } else if (GetComponent<Renderer>().material.color.Equals(Color.blue))
         {
-            GetComponent<Renderer>().material.color = Color.white;
-            text.text = "RED";
-        }  
+            color = Color.white;
+            titleTxt = "RED";
+        }
+
+        GetComponent<Renderer>().material.color = color;
+        buttonTitle.text = titleTxt;
         
+        #if UNITY_IOS && !UNITY_EDITOR
+                NativeAPI.showHostMainWindow(titleTxt);
+        #endif
     }
-
-
-    void showHostMainWindow()
-    {
-        Debug.Log("showHostMainWindow");
-    
-            NativeAPI.showHostMainWindow(lastStringColor);
-    
-    }
-
-    // void OnGUI()
-    // {
-    //     GUIStyle style = new GUIStyle("button");
-    //     style.fontSize = 30;        
-    //     if (GUI.Button(new Rect(400, 50, 200, 100), "Red", style)) ChangeColor("red");
-    //     if (GUI.Button(new Rect(100, 50, 200, 100), "Blue", style)) ChangeColor("blue");
-    //     
-    //     if (GUI.Button(new Rect(10, 200, 400, 100), "Unload", style)) Application.Unload();
-    //     if (GUI.Button(new Rect(440, 200, 400, 100), "Quit", style)) Application.Quit();
-    // }
+            
 }
 

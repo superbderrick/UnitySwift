@@ -20,7 +20,7 @@ class UnityUISampleView: UIView {
         label.backgroundColor = UIColor.blue
         label.textColor = UIColor.white
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -31,6 +31,7 @@ class UnityUISampleView: UIView {
         button.backgroundColor = UIColor.systemPink
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitle("Unload", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(unloadButtonTouched), for: .primaryActionTriggered)
         return button
     }()
@@ -42,6 +43,7 @@ class UnityUISampleView: UIView {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitle("Quit", for: .normal)
         button.backgroundColor = UIColor.systemBlue
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(quitButtonTouched), for: .primaryActionTriggered)
         return button
     }()

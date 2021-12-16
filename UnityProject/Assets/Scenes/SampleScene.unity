@@ -160,7 +160,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -670, y: 235}
-  m_SizeDelta: {x: 250, y: 60}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617276767
 MonoBehaviour:
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa40bb01964049c7ad07dec37ccc316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1953901081}
+  buttonTitle: {fileID: 1953901081}
 --- !u!65 &1664397492
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -666,7 +666,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
