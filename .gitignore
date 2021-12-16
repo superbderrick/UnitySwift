@@ -328,14 +328,14 @@ Pods/Target Support Files/Pods-UnitySwiftTests/Pods-UnitySwiftTests.release.xcco
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-UnityProject/UnitySwift/[Ll]ibrary/
-UnityProject/UnitySwift/[Tt]emp/
-UnityProject/UnitySwift/[Oo]bj/
-UnityProject/UnitySwift/[Bb]uild/
-UnityProject/UnitySwift/[Bb]uilds/
-UnityProject/UnitySwift/[Ll]ogs/
-UnityProject/UnitySwift/[Uu]ser[Ss]ettings/
-UnityProject/UnitySwift/.idea/
+UnityProject/[Ll]ibrary/
+UnityProject/[Tt]emp/
+UnityProject/[Oo]bj/
+UnityProject/[Bb]uild/
+UnityProject/[Bb]uilds/
+UnityProject/[Ll]ogs/
+UnityProject/[Uu]ser[Ss]ettings/
+UnityProject/.idea/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
