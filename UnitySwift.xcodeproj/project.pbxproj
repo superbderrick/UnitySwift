@@ -20,7 +20,6 @@
 		49C04C50276B043300B5E378 /* UnitySampleConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04C4F276B043300B5E378 /* UnitySampleConstant.swift */; };
 		49C04C52276B045E00B5E378 /* UnityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04C51276B045E00B5E378 /* UnityHelper.swift */; };
 		49C04C54276B048A00B5E378 /* UnityUISampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C04C53276B048A00B5E378 /* UnityUISampleView.swift */; };
-		49C04C57276B075B00B5E378 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C04C56276B075B00B5E378 /* test.m */; };
 		AD2BC83634D448765B85314B /* Pods_UnitySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE1B55B7F7BA513A3C50B0D /* Pods_UnitySwift.framework */; };
 		DFB34C2DEB1D00EB12B049CF /* Pods_UnitySwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE6CE31DC18AA7F84798BB5 /* Pods_UnitySwiftTests.framework */; };
 		FC8E003D2B5F7D3FB92A4BDA /* Pods_UnitySwift_UnitySwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57FA4BAD7BBE81A76CCD4D3F /* Pods_UnitySwift_UnitySwiftUITests.framework */; };
@@ -81,7 +80,6 @@
 		49C04C51276B045E00B5E378 /* UnityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityHelper.swift; sourceTree = "<group>"; };
 		49C04C53276B048A00B5E378 /* UnityUISampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityUISampleView.swift; sourceTree = "<group>"; };
 		49C04C55276B075B00B5E378 /* UnitySwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitySwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		49C04C56276B075B00B5E378 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		57FA4BAD7BBE81A76CCD4D3F /* Pods_UnitySwift_UnitySwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitySwift_UnitySwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96092328D07D041C0CF3A7CF /* Pods-UnitySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitySwift.release.xcconfig"; path = "Target Support Files/Pods-UnitySwift/Pods-UnitySwift.release.xcconfig"; sourceTree = "<group>"; };
 		9BE6CE31DC18AA7F84798BB5 /* Pods_UnitySwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitySwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +151,6 @@
 				49C04C4F276B043300B5E378 /* UnitySampleConstant.swift */,
 				49C04C51276B045E00B5E378 /* UnityHelper.swift */,
 				49C04C53276B048A00B5E378 /* UnityUISampleView.swift */,
-				49C04C56276B075B00B5E378 /* test.m */,
 				49C04C55276B075B00B5E378 /* UnitySwift-Bridging-Header.h */,
 			);
 			path = UnitySwift;
@@ -444,7 +441,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				495B9FCB272D650700370A17 /* ViewController.swift in Sources */,
-				49C04C57276B075B00B5E378 /* test.m in Sources */,
 				49C04C50276B043300B5E378 /* UnitySampleConstant.swift in Sources */,
 				49C04C4E276B040900B5E378 /* UnitySampleUtils.swift in Sources */,
 				495B9FC7272D650700370A17 /* AppDelegate.swift in Sources */,

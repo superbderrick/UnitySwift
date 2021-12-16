@@ -16,9 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-               return
-           }
-           self.delegate = appDelegate
+            return
+        }
+        self.delegate = appDelegate
         
     }
     
