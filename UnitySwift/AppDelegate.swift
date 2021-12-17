@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     var unitySampleView: UnityUIView!
     var didQuit: Bool = false
     
-    @objc var currentUnityController: UnityAppController!
     @objc var ufw: UnityFramework!
     
     
