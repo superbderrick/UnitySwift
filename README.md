@@ -8,6 +8,4 @@ This is a sample code that integrates Unity in an iOS app using Swift
 
 - pod install
 - open .xcworkspace
-- open the Unity project file and make an iOS Xcodeproject to iOSLibary folder
-
-
+- open the Unity project file and make an iOS Xcode Project and then copy to iOS Library folder
