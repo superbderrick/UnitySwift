@@ -6,10 +6,10 @@ This is a sample code that integrates Unity in an iOS app using Swift
 
 ### Quick Start 
 
-- pod install
-- open .xcworkspace
-- open the Unity project file and make an iOS Xcode Project and then copy to iOS Library folder
-- follow the guide in the uaal example, You need to create a reference of the unity framework and create various project configurations
+- $ Pod install
+- & Open .xcworkspace
+- Open the Unity project file and make an iOS Xcode Project and then copy to iOS Library folder
+- Follow the guide in the unity uaal example, You need to create a reference of the unity framework and create various project configurations
  Please refer to the document below
  - https://github.com/Unity-Technologies/uaal-example/blob/master/docs/ios.md
 
