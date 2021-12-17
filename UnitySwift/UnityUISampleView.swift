@@ -15,7 +15,7 @@ class UnityUISampleView: UIView {
         
         let label = UILabel()
         label.frame = CGRect(x: 400, y: 20, width: 250, height: 30)
-        label.text = "Native UI Components"
+        label.text = "Native UI Buttons"
         label.textAlignment = NSTextAlignment.center
         label.backgroundColor = UIColor.blue
         label.textColor = UIColor.white
