@@ -11,17 +11,16 @@ import UnityFramework
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , NativeCallsProtocol   {
     func showHostMainWindow(_ color: String!) {
-        if(color == "BLUE") {
+        if(color == Constants.COLOR.BLUE) {
             self.unitySampleView.nativeTitleLable.backgroundColor = .red
             self.unitySampleView.nativeTitleLable.textColor = .white
-        } else if(color == "RED") {
+        } else if(color == Constants.COLOR.RED) {
             self.unitySampleView.nativeTitleLable.backgroundColor = .white
             self.unitySampleView.nativeTitleLable.textColor = .black
-        }else if(color == "WHITE") {
+        }else if(color == Constants.COLOR.WHITE) {
             self.unitySampleView.nativeTitleLable.backgroundColor = .blue
             self.unitySampleView.nativeTitleLable.textColor = .white
         }
-        
         
         
     }
@@ -32,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     var viewController: ViewController!
     
     var appLaunchOpts: [UIApplication.LaunchOptionsKey: Any]?
-    var unitySampleView: UnityUISampleView!
+    var unitySampleView: UnityUIView!
     var didQuit: Bool = false
     
     @objc var currentUnityController: UnityAppController!
@@ -100,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     
     func moveGameScene() {
         if !unityIsInitialized() {
-            UnitySampleUtils.showAlert(UnitySampleConstant.ERRORMESSAGES.NOT_INITIALIZED, UnitySampleConstant.ERRORMESSAGES.INIT_FIREST, window: self.window)
+            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.NOT_INITIALIZED, Constants.ERRORMESSAGES.INIT_FIREST, window: self.window)
         } else {
             self.ufw?.showUnityWindow()
         }
@@ -108,12 +107,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     
     func initUnity() {
         if unityIsInitialized() {
-            UnitySampleUtils.showAlert(UnitySampleConstant.ERRORMESSAGES.ALREADY_INIT, UnitySampleConstant.ERRORMESSAGES.UNLOAD_FIREST, window: self.window)
+            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.ALREADY_INIT, Constants.ERRORMESSAGES.UNLOAD_FIREST, window: self.window)
             return
         }
         
         if didQuit {
-            UnitySampleUtils.showAlert(UnitySampleConstant.ERRORMESSAGES.CANNOTBE_INITIALIZED, UnitySampleConstant.ERRORMESSAGES.USE_UNLOAD, window: self.window)
+            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.CANNOTBE_INITIALIZED, Constants.ERRORMESSAGES.USE_UNLOAD, window: self.window)
             return
         }
         
@@ -130,9 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     
     func attachUnityView() {
         let view: UIView? = ufw?.appController()?.rootView
-        //        let blackEmptyView = UIView(frame: UIApplication.shared.keyWindow!.frame)
-        
-        self.unitySampleView = UnityUISampleView(frame: UIApplication.shared.keyWindow!.frame)
+        self.unitySampleView = UnityUIView(frame: UIApplication.shared.keyWindow!.frame)
         view?.addSubview(self.unitySampleView)
     }
     
@@ -142,7 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     
     func quitButtonTouched(_ sender: UIButton) {
         if !unityIsInitialized() {
-            UnitySampleUtils.showAlert(UnitySampleConstant.ERRORMESSAGES.NOT_INITIALIZED, UnitySampleConstant.ERRORMESSAGES.INIT_FIREST, window: self.window)
+            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.NOT_INITIALIZED, Constants.ERRORMESSAGES.INIT_FIREST, window: self.window)
         } else {
             getUnityFramework()!.quitApplication(0)
         }
@@ -150,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     
     func returnUnity() {
         if didQuit {
-            UnitySampleUtils.showAlert(UnitySampleConstant.ERRORMESSAGES.CANNOTBE_INITIALIZED, UnitySampleConstant.ERRORMESSAGES.USE_UNLOAD, window: self.window)
+            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.CANNOTBE_INITIALIZED, Constants.ERRORMESSAGES.USE_UNLOAD, window: self.window)
             return
         }
         
@@ -166,7 +163,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     
     private func unloadUnity() {
         if !unityIsInitialized() {
-            UnitySampleUtils.showAlert(UnitySampleConstant.ERRORMESSAGES.NOT_INITIALIZED, UnitySampleConstant.ERRORMESSAGES.INIT_FIREST, window: self.window)
+            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.NOT_INITIALIZED, Constants.ERRORMESSAGES.INIT_FIREST, window: self.window)
             return
         } else {
             getUnityFramework()!.unloadApplication()

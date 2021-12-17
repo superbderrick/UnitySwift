@@ -11,5 +11,4 @@ struct UnityHelper {
         static let API_OBJECT_GETAVAILABLEGAMELIST: String = "GetAvailableGameList"
         static let API_OBJECT_NOTIFYNEXTGAMEACTION: String = "NotifyNextGameAction"
     }
-        
 }

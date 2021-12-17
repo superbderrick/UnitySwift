@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UnityUISampleView: UIView {
+class UnityUIView: UIView {
     
     private var delegate: AppDelegate?
     
