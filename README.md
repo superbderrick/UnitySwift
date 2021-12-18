@@ -1,7 +1,8 @@
 # UnitySwift
 
 This is a sample code that integrates Unity in an iOS app using Swift 
-The sample is based on the uaal example provided by unity.  Please refer to the sample below
+The sample is based on the uaal example provided by unity
+Please refer to the sample below
 
 https://github.com/Unity-Technologies/uaal-example
 
