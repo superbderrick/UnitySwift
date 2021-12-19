@@ -161,14 +161,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
         if !unityIsInitialized() {
             UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.NOT_INITIALIZED, Constants.ERRORMESSAGES.INIT_FIREST, window: self.window)
         } else {
-            getUnityFramework()!.quitApplication(0)
+            if let unityFramework = getUnityFramework() {
+                unityFramework.quitApplication(0)
+            }
+            
         }
     }
-
+    
     private func unloadUnityInternal() {
-        self.unityFramework?.unregisterFrameworkListener(self)
+        if let unityFramework = self.unityFramework {
+            unityFramework.unregisterFrameworkListener(self)
+            
+        }
         self.unityFramework = nil
-        window?.makeKeyAndVisible()
+        
+        if let nativeWindow = self.window {
+            nativeWindow.makeKeyAndVisible()
+        }
+        
+        
     }
     
     private func unloadUnity() {
