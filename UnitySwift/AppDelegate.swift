@@ -21,15 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
             self.unitySampleView.nativeTitleLable.backgroundColor = .blue
             self.unitySampleView.nativeTitleLable.textColor = .white
         }
-        
-        
     }
     
     var window: UIWindow?
-    var application: UIApplication?
-    var storyboard: UIStoryboard?
-    var viewController: ViewController!
-    
     var appLaunchOpts: [UIApplication.LaunchOptionsKey: Any]?
     var unitySampleView: UnityUIView!
     var didQuit: Bool = false
@@ -43,8 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
         
         appLaunchOpts = launchOptions
         
-        storyboard = UIStoryboard(name: "Main", bundle: .main)
-        viewController = storyboard?.instantiateViewController(withIdentifier: "Host") as! ViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "Host")
+        
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.rootViewController = viewController;
         window?.makeKeyAndVisible()
@@ -127,9 +122,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     
     
     func attachUnityView() {
-        let view: UIView? = ufw?.appController()?.rootView
-        self.unitySampleView = UnityUIView(frame: UIApplication.shared.keyWindow!.frame)
-        view?.addSubview(self.unitySampleView)
+        
+        guard let unityRootView = ufw?.appController()?.rootView else {
+            return
+        }
+        
+        self.unitySampleView = UnityUIView(frame: UIScreen.main.bounds)
+        unityRootView.addSubview(self.unitySampleView)
+        
+        
     }
     
     func unloadButtonTouched(_ sender: UIButton) {
