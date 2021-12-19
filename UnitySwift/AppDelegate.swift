@@ -28,12 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     var unitySampleView: UnityUIView!
     var didQuit: Bool = false
     
-    @objc var ufw: UnityFramework!
+    @objc var unityFramework: UnityFramework?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        ufw = getUnityFramework()
+        unityFramework = getUnityFramework()
         
         appLaunchOpts = launchOptions
         
@@ -41,30 +41,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
         let viewController = storyboard.instantiateViewController(withIdentifier: "Host")
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = viewController;
-        window?.makeKeyAndVisible()
+        
+        if let nativeWindow = self.window {
+            nativeWindow.rootViewController = viewController;
+            nativeWindow.makeKeyAndVisible()
+        }
         
         return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        self.ufw?.appController()?.applicationWillResignActive(application)
+        
+        if let unityFramework = self.unityFramework {
+            unityFramework.appController()?.applicationWillResignActive(application)
+        }
+        
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        self.ufw?.appController()?.applicationDidEnterBackground(application)
+        if let unityFramework = self.unityFramework {
+            unityFramework.appController()?.applicationDidEnterBackground(application)
+        }
+        
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        self.ufw?.appController()?.applicationWillEnterForeground(application)
+        if let unityFramework = self.unityFramework {
+            unityFramework.appController()?.applicationWillEnterForeground(application)
+        }
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        self.ufw?.appController()?.applicationDidBecomeActive(application)
+        
+        if let unityFramework = self.unityFramework {
+            unityFramework.appController()?.applicationDidBecomeActive(application)
+        }
+        
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        self.ufw?.appController()?.applicationWillTerminate(application)
+        
+        if let unityFramework = self.unityFramework {
+            unityFramework.appController()?.applicationWillTerminate(application)
+        }
     }
     
     // MARK: Unity API
@@ -88,42 +107,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
     }
     
     func unityIsInitialized( ) -> Bool {
-        return (self.ufw != nil && self.ufw?.appController() != nil)
-    }
-    
-    func moveGameScene() {
-        if !unityIsInitialized() {
-            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.NOT_INITIALIZED, Constants.ERRORMESSAGES.INIT_FIREST, window: self.window)
-        } else {
-            self.ufw?.showUnityWindow()
-        }
+        return (self.unityFramework != nil && self.unityFramework?.appController() != nil)
     }
     
     func initUnity() {
-        if unityIsInitialized() {
-            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.ALREADY_INIT, Constants.ERRORMESSAGES.UNLOAD_FIREST, window: self.window)
-            return
+        
+        if let nativeWindow = self.window {
+            if unityIsInitialized() {
+                UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.ALREADY_INIT, Constants.ERRORMESSAGES.UNLOAD_FIREST, window: nativeWindow)
+                return
+            }
+            
+            if didQuit {
+                UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.CANNOTBE_INITIALIZED, Constants.ERRORMESSAGES.USE_UNLOAD, window:nativeWindow)
+                return
+            }
+            
         }
         
-        if didQuit {
-            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.CANNOTBE_INITIALIZED, Constants.ERRORMESSAGES.USE_UNLOAD, window: self.window)
-            return
+        
+        self.unityFramework = getUnityFramework()
+        
+        if let unityframework = self.unityFramework {
+            unityframework.setDataBundleId("com.unity3d.framework")
+            unityframework.register(self)
+            NSClassFromString("FrameworkLibAPI")?.registerAPIforNativeCalls(self)
+            unityframework.runEmbedded(withArgc: CommandLine.argc, argv: CommandLine.unsafeArgv, appLaunchOpts: appLaunchOpts)
+            
+            attachUnityView()
         }
         
-        ufw = getUnityFramework()
-        ufw.setDataBundleId("com.unity3d.framework")
-        ufw.register(self)
-        NSClassFromString("FrameworkLibAPI")?.registerAPIforNativeCalls(self)
-        ufw.runEmbedded(withArgc: CommandLine.argc, argv: CommandLine.unsafeArgv, appLaunchOpts: appLaunchOpts)
-        
-        attachUnityView()
         
     }
     
     
     func attachUnityView() {
         
-        guard let unityRootView = ufw?.appController()?.rootView else {
+        guard let unityRootView = unityFramework?.appController()?.rootView else {
             return
         }
         
@@ -144,20 +164,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
             getUnityFramework()!.quitApplication(0)
         }
     }
-    
-    func returnUnity() {
-        if didQuit {
-            UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.CANNOTBE_INITIALIZED, Constants.ERRORMESSAGES.USE_UNLOAD, window: self.window)
-            return
-        }
-        
-        window?.makeKeyAndVisible()
-    }
-    
-    
+
     private func unloadUnityInternal() {
-        self.ufw?.unregisterFrameworkListener(self)
-        self.ufw = nil
+        self.unityFramework?.unregisterFrameworkListener(self)
+        self.unityFramework = nil
         window?.makeKeyAndVisible()
     }
     
@@ -166,13 +176,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityFrameworkListener , 
             UnitySampleUtils.showAlert(Constants.ERRORMESSAGES.NOT_INITIALIZED, Constants.ERRORMESSAGES.INIT_FIREST, window: self.window)
             return
         } else {
-            getUnityFramework()!.unloadApplication()
+            if let unityFramework = getUnityFramework() {
+                unityFramework.unloadApplication()
+            }
         }
     }
     
     func unityDidUnload(_ notification: Notification!) {
         unloadUnityInternal()
-        
     }
     
     func unityDidQuit(_ notification: Notification!) {
